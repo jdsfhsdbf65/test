@@ -1,4 +1,4 @@
-# Installation
+# Installation luarocks
 
 ```sh
 wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz
