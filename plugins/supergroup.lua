@@ -18,7 +18,7 @@ local function check_member_super(cb_extra, success, result)
         set_owner = member_id ,
         settings = {
           set_name = string.gsub(msg.to.title, '_', ' '),
-		            lock_arabic = '🔐',
+		  lock_arabic = '🔐',
 		  lock_link = "🔒",
           flood = '🔒',
 		  lock_spam = '🔒',
@@ -31,6 +31,7 @@ local function check_member_super(cb_extra, success, result)
           lock_fosh = '🔐',
           lock_gif = '🔐',
           lock_chat = '🔐',
+		  lock_fwd = '🔐',
           lock_voice = '🔐',
           lock_tag = '🔐',
           lock_username = '🔐',
@@ -771,7 +772,7 @@ end
     end
 	
   local settings = data[tostring(target)]['settings']
-  local text = "⚙تنظیمات سوپرگروه⚙\n➖➖➖➖➖➖➖➖➖\n🖥 تنظیمات رسانه 🖥\n🏝 قفل گیف : "..settings.lock_gif.."\n🖼 قفل عکس : "..settings.lock_photo.."\n🎥 قفل فیلم : "..settings.lock_video.."\n🗣 قفل صدا (ویس) : "..settings.lock_voice.." \n🗂 قفل فایل : "..settings.lock_file.."\n➖➖➖➖➖➖➖➖➖\n👥 تنظیمات چت 👥\n🚫 قفل اسپم : "..settings.lock_spam.."\n🚫 حساسیت اسپم : "..NUM_MSG_MAX.."\n🚫 قفل حساسیت اسپم : "..settings.flood.."\n🤐 قفل چت : "..settings.lock_chat.."\n👥 قفل مخاطبین : "..settings.lock_contacts.."\n🔢 قفل اعداد : "..settings.lock_number.."\n🔞 قفل فحش : "..settings.lock_fosh.."\n📱 قفل ورود و خروج : "..settings.lock_tgservice.."\n➖➖➖➖➖➖➖➖➖\n👥 تنظیمات تبلیغات 👥\n⛓ قفل لینک : "..settings.lock_link.."\n⛓ قفل یوزرنیم : "..settings.lock_username.."\n⛓ قفل تگ : "..settings.lock_tag.."\n➖➖➖➖➖➖➖➖➖\n⏱مدت زمان گروه : "..Expiretime
+  local text = "⚙تنظیمات سوپرگروه⚙\n➖➖➖➖➖➖➖➖➖\n🖥 تنظیمات رسانه 🖥\n🏝 قفل گیف : "..settings.lock_gif.."\n🖼 قفل عکس : "..settings.lock_photo.."\n🎥 قفل فیلم : "..settings.lock_video.."\n🗣 قفل صدا (ویس) : "..settings.lock_voice.." \n🗂 قفل فایل : "..settings.lock_file.."\n➖➖➖➖➖➖➖➖➖\n👥 تنظیمات چت 👥\n🚫 قفل اسپم : "..settings.lock_spam.."\n🚫 حساسیت اسپم : "..NUM_MSG_MAX.."\n🚫 قفل حساسیت اسپم : "..settings.flood.."\n🤐 قفل چت : "..settings.lock_chat.."\n👥 قفل مخاطبین : "..settings.lock_contacts.."\n🔢 قفل اعداد : "..settings.lock_number.."\n🔞 قفل فحش : "..settings.lock_fosh.."\n📱 قفل ورود و خروج : "..settings.lock_tgservice.."\n➖➖➖➖➖➖➖➖➖\n👥 تنظیمات تبلیغات 👥\n⛓ قفل لینک : "..settings.lock_link.."\n⛓ قفل یوزرنیم : "..settings.lock_username.."\n⛓ قفل تگ : "..settings.lock_tag.."\n⛓ قفل فوروارد : "..settings.lock_fwd.."\n➖➖➖➖➖➖➖➖➖\n⏱مدت زمان گروه : "..Expiretime
   return text
 end
 
@@ -1484,7 +1485,7 @@ local function run(msg, matches)
 				resolve_username(username,  callbackres, cbres_extra)
 			else
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested SuperGroup ID")
-				return "🤖Tarfand🤖\n➖➖➖➖➖➖➖➖➖➖➖\n👤درباره شما👤\n📝نام شما : " ..string.gsub(msg.from.print_name, "_", " ").. "\n📝ایدی شما : "..msg.from.id.."\n📝یوزرنیم شما : @"..(msg.from.username or '----').."\n➖➖➖➖➖➖➖➖➖➖➖\n👥درباره گروه👥\n📝نام سوپرگروه : " ..string.gsub(msg.to.print_name, "_", " ").. "\n📝ایدی سوپر گروه : "..msg.to.id.."\n➖➖➖➖➖➖➖➖➖➖➖\n📝@Getandroid📝"
+				return "🤖TeleSurena🤖\n➖➖➖➖➖➖➖➖➖➖➖\n👤درباره شما👤\n📝نام شما : " ..string.gsub(msg.from.print_name, "_", " ").. "\n📝ایدی شما : "..msg.from.id.."\n📝یوزرنیم شما : @"..(msg.from.username or '----').."\n➖➖➖➖➖➖➖➖➖➖➖\n👥درباره گروه👥\n📝نام سوپرگروه : " ..string.gsub(msg.to.print_name, "_", " ").. "\n📝ایدی سوپر گروه : "..msg.to.id.."\n➖➖➖➖➖➖➖➖➖➖➖\n📝@TeleSurenaCH📝"
             end
 		end
 
@@ -2446,7 +2447,7 @@ return {
     "^(مسدود) (.*)",
 	"^(مسدود)",
 	"^(تبدیل به سوپرگروه)$",
-	"^(ایدی)$",
+	"^(تبدیل به سوپرگروه)$",
 	"^(ایدی) (.*)$",
 	"^(آیدی)$",
 	"^(آیدی) (.*)$",
